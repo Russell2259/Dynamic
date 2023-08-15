@@ -26,11 +26,11 @@ server.on('request', (req, res) => {
   else {
     if (new URL(`http://localhost${req.url}`).pathname.startsWith('/dynamic/')) {
       new nodeStatic.Server('./dist').serve(req, res, (err) => {
-        if (err.status === 404) res.end('Not Found');
+        if ((err && (err.status === 404))) res.end('Not Found');
       });
     } else {
       new nodeStatic.Server('./static').serve(req, res, (err) => {
-        if (err.status === 404) res.end('Not Found');
+        if (err && (err.status === 404)) res.end('Not Found');
       });
     }
   };
