@@ -1,5 +1,3 @@
-
-
 ![Frame_1_6](https://github.com/NebulaServices/Dynamic/assets/81369743/373dc333-ff38-46c7-90f7-bd34899a6807)
 ![Version](https://img.shields.io/badge/status-BETA-build) 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
@@ -21,15 +19,14 @@
 - Written in TypeScript
 
 ## Implementation
+
 See [Examples](https://github.com/NebulaServices/Dynamic/tree/main/examples);
 
 ## Getting started (How to run)
 
-### Method 1
-
 1. Clone and change directory into Dynamic
 ```bash
-git clone https://github,com/NebulaServices/Dynamic.git && cd Dynamic
+$ git clone https://github,com/NebulaServices/Dynamic.git && cd Dynamic
 ```
 
 2. Run bash script and follow the instructions in the script
@@ -37,35 +34,16 @@ git clone https://github,com/NebulaServices/Dynamic.git && cd Dynamic
 ./bin/start.sh
 ```
 
-
-### Method 2 
-
-1. Clone and change directory into Dynamic
-```bash
-git clone https://GitHub.com/NebulaServices/Dynamic.git && cd Dynamic
-```
-
-2. Install dependencies
-```bash
-npm i 
-```
-
-3. Build Dynamic Bundles
-```bash
-npm run build
-```
-
-4. Run the server
-```bash
-npm start
-```
-
 ## Notice 
 
 Hi there, we're launching this project in **early public beta**. Behind the scenes we're working hard at rewriting and bug fixes. Thanks for understanding. 
 
 ## Developer support 
+
 We have our very own developer support server! Join with this link: https://discord.gg/shESgmwt3M
+
+## Docs
+Read our documentation [here](https://github.com/NebulaServices/Dynamic/tree/main/docs/configuration)
 
 ## Authors
 

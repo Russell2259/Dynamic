@@ -1,19 +1,19 @@
-import * as esbuild from "esbuild";
-import { copyFile } from "fs/promises";
+import * as esbuild from 'esbuild';
+import { copyFile } from 'fs/promises';
 
-await import("./index.js");
+await import('./index.js');
 
-console.time("esbuild");
+console.time('esbuild');
 
 const worker = await esbuild.context({
-  entryPoints: ["lib/worker/index.ts"],
+  entryPoints: ['lib/worker/index.ts'],
   bundle: true,
-  outfile: "dist/dynamic.worker.js",
-  format: "iife",
+  outfile: 'dist/dynamic.worker.js',
+  format: 'iife',
   minify: true,
-  platform: "browser",
+  platform: 'browser',
   sourcemap: true,
-  target: ["es2020"],
+  target: ['es2020'],
   plugins: [],
   metafile: true,
 });
@@ -21,14 +21,14 @@ const worker = await esbuild.context({
 worker.watch();
 
 const handler = await esbuild.context({
-  entryPoints: ["lib/handler/index.ts"],
+  entryPoints: ['lib/handler/index.ts'],
   bundle: true,
-  outfile: "dist/dynamic.handler.js",
-  format: "iife",
+  outfile: 'dist/dynamic.handler.js',
+  format: 'iife',
   minify: true,
-  platform: "browser",
+  platform: 'browser',
   sourcemap: true,
-  target: ["es2020"],
+  target: ['es2020'],
   plugins: [],
   metafile: true,
 });
@@ -36,14 +36,14 @@ const handler = await esbuild.context({
 handler.watch();
 
 const client = await esbuild.context({
-  entryPoints: ["lib/client/index.ts"],
+  entryPoints: ['lib/client/index.ts'],
   bundle: true,
-  outfile: "dist/dynamic.client.js",
-  format: "iife",
+  outfile: 'dist/dynamic.client.js',
+  format: 'iife',
   minify: true,
-  platform: "browser",
+  platform: 'browser',
   sourcemap: true,
-  target: ["es2020"],
+  target: ['es2020'],
   plugins: [],
   metafile: true,
 });
@@ -51,22 +51,22 @@ const client = await esbuild.context({
 client.watch();
 
 const html = await esbuild.context({
-  entryPoints: ["lib/html/index.ts"],
+  entryPoints: ['lib/html/index.ts'],
   bundle: true,
-  outfile: "dist/dynamic.html.js",
-  format: "iife",
+  outfile: 'dist/dynamic.html.js',
+  format: 'iife',
   minify: true,
-  platform: "browser",
+  platform: 'browser',
   sourcemap: true,
-  target: ["es2020"],
+  target: ['es2020'],
   plugins: [],
   metafile: true,
 });
 
 html.watch();
 
-await copyFile("./lib/dynamic.config.js", "./dist/dynamic.config.js");
+await copyFile('./lib/dynamic.config.js', './dist/dynamic.config.js');
 
 console.log(await esbuild.analyzeMetafile((await worker.rebuild()).metafile));
 
-console.timeEnd("esbuild");
+console.timeEnd('esbuild');
